@@ -2,99 +2,140 @@
 import Layout from '../layouts/Layout.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const missionPoints = [
+  'To systematically propagate spiritual knowledge to society at large and to educate all people in the techniques of spiritual life in order to check the imbalance of values in life and to achieve real unity and peace in the world.',
+  'To propagate a consciousness of Krishna, as it is revealed in the Bhagavad-gita and Srimad Bhagavatam.',
+  'To bring the members of the Society together with each other and nearer to Krishna, the prime entity, thus developing the idea within the members, and humanity at large, that each soul is part and parcel of the quality of Godhead (Krishna).',
+  'To teach and encourage the sankirtana movement, congregational chanting of the holy name of God, as revealed in the teachings of Lord Sri Caitanya Mahaprabhu.',
+  'To erect for the members and for society at large a holy place of transcendental pastimes dedicated to the Personality of Krishna.',
+  'To bring the members closer together for the purpose of teaching a simpler, more natural way of life.',
+  'With a view towards achieving the aforementioned purposes, to publish and distribute periodicals, magazines, books and other writings.',
+];
 ---
 
 <Layout title="About" description="Learn about ISKCON Thoothukudi and the Hare Krishna movement">
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl md:text-4xl font-bold text-maroon mb-8">History of the Hare Krishna Movement</h1>
-
-    <div class="prose max-w-none text-warm-brown leading-relaxed space-y-6">
-      <p>
-        In 1965, at the age of 69, A. C. Bhaktivedanta Swami Prabhupada boarded the steamship
-        'Jaladuta' from Mumbai on his way to United States. At an age when most people think of
-        retiring, Srila Prabhupada undertook this arduous journey to fulfill the mission of Lord
-        Caitanya and follow the instruction of his spiritual master Bhaktisiddhanta Saraswati Thakur
-        to carry the message of Bhagavad-gita and Srimad Bhagavatam to the Western world.
-      </p>
-
-      <p>
-        After arriving in New York City in September 1965, Srila Prabhupada struggled alone for the
-        first year to establish his Krishna conscious movement. He lived simply, lectured whenever and
-        wherever he got the opportunity and gradually began to attract some small interest in his
-        teaching. In July of 1966, while still working from an obscure storefront on New York City's
-        Lower East Side, Srila Prabhupada nonetheless founded a spiritual society intended for worldwide
-        participation. He called it International Society for Krishna Consciousness or ISKCON for short
-        and thus began the Hare Krishna movement in America.
-      </p>
-
-      <p>
-        At the time of incorporation, Srila Prabhupada had not attracted even one committed follower.
-        Undeterred, he enlisted volunteers from among the small group of regular attendees at his
-        evening lectures to act as ISKCON's first trustees. That was then. Today, ISKCON comprises of
-        more than 400 temples worldwide, 40 rural communities and over 100 vegetarian restaurants. It
-        also conducts special projects throughout the world, such as "Food for Life", the only free
-        vegetarian relief program in the world.
+  <!-- Page Banner -->
+  <section class="bg-maroon py-12 px-4 relative">
+    <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 18px, #B8860B 18px, #B8860B 20px); border-top: 3px solid #B8860B; border-bottom: 3px solid #B8860B;"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl text-gold mb-2" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">About ISKCON</h1>
+      <p class="text-cream/80 max-w-xl mx-auto">
+        Learn about the International Society for Krishna Consciousness and the Hare Krishna movement.
       </p>
     </div>
+  </section>
 
-    <hr class="my-10 border-gold/20" />
-
-    <h2 class="text-2xl md:text-3xl font-bold text-maroon mb-6">Our Mission</h2>
-
-    <div class="prose max-w-none text-warm-brown leading-relaxed space-y-6">
-      <p>
-        ISKCON's teachings are non-sectarian, following the principle of sanatana dharma or eternal
-        religion, which denotes the eternal activity of all living beings — loving devotional service
-        (bhakti-yoga) to the Supreme Personality of Godhead.
-      </p>
-
-      <p>The seven purposes of ISKCON, as stated by Srila Prabhupada:</p>
-
-      <ol class="list-decimal pl-6 space-y-3 text-warm-brown">
-        <li>To systematically propagate spiritual knowledge to society at large and to educate all people in the techniques of spiritual life in order to check the imbalance of values in life and to achieve real unity and peace in the world.</li>
-        <li>To propagate a consciousness of Krishna, as it is revealed in the Bhagavad-gita and Srimad Bhagavatam.</li>
-        <li>To bring the members of the Society together with each other and nearer to Krishna, the prime entity, thus developing the idea within the members, and humanity at large, that each soul is part and parcel of the quality of Godhead (Krishna).</li>
-        <li>To teach and encourage the sankirtana movement, congregational chanting of the holy name of God, as revealed in the teachings of Lord Sri Caitanya Mahaprabhu.</li>
-        <li>To erect for the members and for society at large a holy place of transcendental pastimes dedicated to the Personality of Krishna.</li>
-        <li>To bring the members closer together for the purpose of teaching a simpler, more natural way of life.</li>
-        <li>With a view towards achieving the aforementioned purposes, to publish and distribute periodicals, magazines, books and other writings.</li>
-      </ol>
-    </div>
-
-    <hr class="my-10 border-gold/20" />
-
-    <h2 class="text-2xl md:text-3xl font-bold text-maroon mb-6">Founder Acharya</h2>
-
-    <div class="flex flex-col md:flex-row gap-8 items-start">
-      <div class="md:w-64 shrink-0">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/63/Bhaktivedanta_Swami_Prabhupada.jpg"
-          alt="Srila Prabhupada"
-          class="w-full rounded-lg border border-gold/30"
-          loading="lazy"
-        />
-        <p class="text-xs text-warm-muted text-center mt-2">His Divine Grace A.C. Bhaktivedanta Swami Prabhupada</p>
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <!-- Two-column: Prabhupada + History -->
+    <div class="flex flex-col md:flex-row gap-10 mb-14">
+      <!-- Left: Prabhupada photo + bio -->
+      <div class="md:w-2/5 shrink-0">
+        <div class="sticky top-24">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/63/Bhaktivedanta_Swami_Prabhupada.jpg"
+            alt="Srila Prabhupada"
+            class="w-full rounded border-2 border-gold/40 shadow-lg"
+            loading="lazy"
+          />
+          <p class="text-xs text-warm-muted text-center mt-3" style="font-family: Georgia, 'Times New Roman', serif;">His Divine Grace A.C. Bhaktivedanta Swami Prabhupada</p>
+          <div class="mt-4 bg-warm-surface p-4 rounded border-l-4 border-l-gold">
+            <p class="text-sm text-warm-brown leading-relaxed">
+              His Divine Grace A.C. Bhaktivedanta Swami Prabhupada (1896-1977) is the Founder-Acharya of
+              the International Society for Krishna Consciousness. Born Abhay Charan De on September 1,
+              1896 in Calcutta, he met his spiritual master, Srila Bhaktisiddhanta Sarasvati Gosvami, in
+              1922 and was asked to spread the message of Lord Caitanya in the English language.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="prose max-w-none text-warm-brown leading-relaxed space-y-4">
-        <p>
-          His Divine Grace A.C. Bhaktivedanta Swami Prabhupada (1896–1977) is the Founder-Acharya of
-          the International Society for Krishna Consciousness. Born Abhay Charan De on September 1,
-          1896 in Calcutta, he met his spiritual master, Srila Bhaktisiddhanta Sarasvati Gosvami, in
-          1922 and was asked to spread the message of Lord Caitanya in the English language.
-        </p>
-        <p>
-          Over the next 11 years until his passing in 1977, Srila Prabhupada translated and provided
-          commentary for over 80 volumes of the Vedic scriptures, including the Bhagavad-gita As It Is
-          and the multi-volume Srimad-Bhagavatam. He circled the globe 14 times, established 108
-          temples, and initiated over 5,000 disciples. His books have been translated into 76 languages
-          and distributed in the hundreds of millions of copies worldwide.
-        </p>
+
+      <!-- Right: History -->
+      <div class="flex-1">
+        <h2 class="text-2xl md:text-3xl text-maroon mb-6" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">History of the Hare Krishna Movement</h2>
+
+        <div class="text-warm-brown leading-relaxed space-y-5">
+          <p>
+            In 1965, at the age of 69, A. C. Bhaktivedanta Swami Prabhupada boarded the steamship
+            'Jaladuta' from Mumbai on his way to United States. At an age when most people think of
+            retiring, Srila Prabhupada undertook this arduous journey to fulfill the mission of Lord
+            Caitanya and follow the instruction of his spiritual master Bhaktisiddhanta Saraswati Thakur
+            to carry the message of Bhagavad-gita and Srimad Bhagavatam to the Western world.
+          </p>
+
+          <p>
+            After arriving in New York City in September 1965, Srila Prabhupada struggled alone for the
+            first year to establish his Krishna conscious movement. He lived simply, lectured whenever and
+            wherever he got the opportunity and gradually began to attract some small interest in his
+            teaching. In July of 1966, while still working from an obscure storefront on New York City's
+            Lower East Side, Srila Prabhupada nonetheless founded a spiritual society intended for worldwide
+            participation. He called it International Society for Krishna Consciousness or ISKCON for short
+            and thus began the Hare Krishna movement in America.
+          </p>
+
+          <p>
+            At the time of incorporation, Srila Prabhupada had not attracted even one committed follower.
+            Undeterred, he enlisted volunteers from among the small group of regular attendees at his
+            evening lectures to act as ISKCON's first trustees. That was then. Today, ISKCON comprises of
+            more than 400 temples worldwide, 40 rural communities and over 100 vegetarian restaurants. It
+            also conducts special projects throughout the world, such as "Food for Life", the only free
+            vegetarian relief program in the world.
+          </p>
+
+          <p>
+            Over the next 11 years until his passing in 1977, Srila Prabhupada translated and provided
+            commentary for over 80 volumes of the Vedic scriptures, including the Bhagavad-gita As It Is
+            and the multi-volume Srimad-Bhagavatam. He circled the globe 14 times, established 108
+            temples, and initiated over 5,000 disciples. His books have been translated into 76 languages
+            and distributed in the hundreds of millions of copies worldwide.
+          </p>
+        </div>
       </div>
     </div>
 
+    <!-- Decorative pull-quote -->
+    <div class="my-14 py-10 px-8 bg-maroon text-center rounded relative">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <div class="h-px w-16 bg-gold/50"></div>
+        <span class="text-gold text-xl">&#9753;</span>
+        <div class="h-px w-16 bg-gold/50"></div>
+      </div>
+      <blockquote class="text-xl md:text-2xl text-gold italic leading-relaxed max-w-3xl mx-auto" style="font-family: Georgia, 'Times New Roman', serif;">
+        "In this age of quarrel and hypocrisy, the only means of deliverance is the chanting of the holy names of the Lord. There is no other way. There is no other way. There is no other way."
+      </blockquote>
+      <p class="text-cream/60 text-sm mt-4" style="font-family: Georgia, 'Times New Roman', serif;">— Brhan-Naradiya Purana 38.126</p>
+      <div class="flex items-center justify-center gap-4 mt-4">
+        <div class="h-px w-16 bg-gold/50"></div>
+        <span class="text-gold text-xl">&#9753;</span>
+        <div class="h-px w-16 bg-gold/50"></div>
+      </div>
+    </div>
+
+    <!-- Mission points in 2x4 numbered grid -->
+    <h2 class="text-2xl md:text-3xl text-maroon mb-6" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Our Mission</h2>
+
+    <p class="text-warm-brown leading-relaxed mb-6">
+      ISKCON's teachings are non-sectarian, following the principle of sanatana dharma or eternal
+      religion, which denotes the eternal activity of all living beings — loving devotional service
+      (bhakti-yoga) to the Supreme Personality of Godhead.
+    </p>
+
+    <p class="text-warm-muted mb-8" style="font-family: Georgia, 'Times New Roman', serif;">The seven purposes of ISKCON, as stated by Srila Prabhupada:</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-12">
+      {missionPoints.map((point, i) => (
+        <div class="flex gap-4 bg-ivory border-l-4 border-l-gold p-5 rounded-r-lg shadow-sm">
+          <div class="shrink-0 w-10 h-10 rounded-full bg-maroon flex items-center justify-center">
+            <span class="text-gold font-bold text-sm" style="font-family: Georgia, 'Times New Roman', serif;">{i + 1}</span>
+          </div>
+          <p class="text-warm-brown text-sm leading-relaxed">{point}</p>
+        </div>
+      ))}
+    </div>
+
     <hr class="my-10 border-gold/20" />
 
-    <h2 class="text-2xl md:text-3xl font-bold text-maroon mb-6">Explore more</h2>
+    <h2 class="text-2xl md:text-3xl text-maroon mb-6" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Explore more</h2>
 
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
       {[
@@ -103,9 +144,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         { title: 'Events & Festivals', href: `${base}/events` },
         { title: 'Contact Us', href: `${base}/contact` },
       ].map(link => (
-        <a href={link.href} class="flex items-center justify-between border border-gold/30 rounded-lg px-5 py-4 hover:border-saffron/50 transition-colors group bg-warm-surface shadow-sm">
-          <span class="font-medium text-warm-brown group-hover:text-saffron transition-colors">{link.title}</span>
-          <svg class="w-5 h-5 text-warm-muted group-hover:text-saffron transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={link.href} class="flex items-center justify-between border-l-4 border-l-gold bg-ivory px-5 py-4 hover:shadow-md transition-shadow group shadow-sm rounded-r-lg">
+          <span class="font-medium text-warm-brown group-hover:text-saffron-dark transition-colors" style="font-family: Georgia, 'Times New Roman', serif;">{link.title}</span>
+          <svg class="w-5 h-5 text-warm-muted group-hover:text-saffron-dark transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
       ))}
     </div>

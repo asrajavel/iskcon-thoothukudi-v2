@@ -3,17 +3,23 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contact" description="Get in touch with ISKCON Thoothukudi">
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl md:text-4xl font-bold text-maroon mb-2">Contact Us</h1>
-    <p class="text-warm-muted max-w-xl mb-10">
-      We'd love to hear from you. Visit us, call us, or send us a message.
-    </p>
+  <!-- Page Banner -->
+  <section class="bg-maroon py-12 px-4 relative">
+    <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 18px, #B8860B 18px, #B8860B 20px); border-top: 3px solid #B8860B; border-bottom: 3px solid #B8860B;"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl text-gold mb-2" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Contact Us</h1>
+      <p class="text-cream/80 max-w-xl mx-auto">
+        We'd love to hear from you. Visit us, call us, or send us a message.
+      </p>
+    </div>
+  </section>
 
+  <section class="max-w-4xl mx-auto px-4 py-12">
     <div class="grid md:grid-cols-2 gap-8">
       <!-- Contact Info -->
       <div class="space-y-8">
         <div>
-          <h2 class="font-bold text-warm-brown text-lg mb-3">Temple Address</h2>
+          <h2 class="text-warm-brown text-lg mb-3" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Temple Address</h2>
           <p class="text-warm-muted text-sm leading-relaxed">
             ISKCON Thoothukudi<br />
             Hare Krishna Land<br />
@@ -23,63 +29,74 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div>
-          <h2 class="font-bold text-warm-brown text-lg mb-3">Get in Touch</h2>
+          <h2 class="text-warm-brown text-lg mb-3" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Get in Touch</h2>
           <div class="space-y-2 text-sm text-warm-muted">
             <p class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <svg class="w-4 h-4 text-saffron-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               +91 98765 43210
             </p>
             <p class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <svg class="w-4 h-4 text-saffron-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               info@iskconthoothukudi.com
             </p>
           </div>
         </div>
 
-        <div>
-          <h2 class="font-bold text-warm-brown text-lg mb-3">Temple Timings</h2>
-          <div class="text-sm text-warm-muted space-y-2">
-            <div class="flex justify-between border-b border-gold/20 pb-2">
-              <span>Mangala Arati</span><span class="font-medium text-warm-brown">4:30 AM</span>
-            </div>
-            <div class="flex justify-between border-b border-gold/20 pb-2">
-              <span>Darshan Opens</span><span class="font-medium text-warm-brown">7:00 AM</span>
-            </div>
-            <div class="flex justify-between border-b border-gold/20 pb-2">
-              <span>Raj Bhog Arati</span><span class="font-medium text-warm-brown">12:30 PM</span>
-            </div>
-            <div class="flex justify-between border-b border-gold/20 pb-2">
-              <span>Evening Darshan</span><span class="font-medium text-warm-brown">4:00 PM</span>
-            </div>
-            <div class="flex justify-between border-b border-gold/20 pb-2">
-              <span>Sandhya Arati</span><span class="font-medium text-warm-brown">7:00 PM</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Temple Closes</span><span class="font-medium text-warm-brown">8:30 PM</span>
+        <!-- Temple Timings as decorative schedule card -->
+        <div class="rounded overflow-hidden shadow-lg border border-gold/30">
+          <div class="bg-maroon px-5 py-3">
+            <h2 class="text-gold text-lg" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Temple Timings</h2>
+          </div>
+          <div class="bg-ivory">
+            <div class="text-sm text-warm-muted">
+              <div class="flex justify-between px-5 py-2.5 bg-warm-surface border-b border-gold/10">
+                <span>Mangala Arati</span><span class="font-medium text-warm-brown">4:30 AM</span>
+              </div>
+              <div class="flex justify-between px-5 py-2.5 border-b border-gold/10">
+                <span>Darshan Opens</span><span class="font-medium text-warm-brown">7:00 AM</span>
+              </div>
+              <div class="flex justify-between px-5 py-2.5 bg-warm-surface border-b border-gold/10">
+                <span>Raj Bhog Arati</span><span class="font-medium text-warm-brown">12:30 PM</span>
+              </div>
+              <div class="flex justify-between px-5 py-2.5 border-b border-gold/10">
+                <span>Evening Darshan</span><span class="font-medium text-warm-brown">4:00 PM</span>
+              </div>
+              <div class="flex justify-between px-5 py-2.5 bg-warm-surface border-b border-gold/10">
+                <span>Sandhya Arati</span><span class="font-medium text-warm-brown">7:00 PM</span>
+              </div>
+              <div class="flex justify-between px-5 py-2.5">
+                <span>Temple Closes</span><span class="font-medium text-warm-brown">8:30 PM</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="border border-gold/30 rounded-lg p-6 bg-warm-surface shadow-md shadow-warm-brown/5">
-        <h2 class="font-bold text-warm-brown text-lg mb-4">Send us a Message</h2>
+      <!-- Contact Form with ornate borders -->
+      <div class="border-2 border-gold/40 rounded p-6 bg-ivory shadow-lg relative">
+        <!-- Ornamental corners -->
+        <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold rounded-tl"></div>
+        <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-gold rounded-tr"></div>
+        <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-gold rounded-bl"></div>
+        <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-gold rounded-br"></div>
+
+        <h2 class="text-warm-brown text-lg mb-4" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Send us a Message</h2>
         <form class="space-y-4">
           <div>
-            <label class="block text-sm font-medium text-warm-brown mb-1" for="name">Name</label>
-            <input type="text" id="name" class="w-full border border-gold/30 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-saffron/20 focus:border-saffron outline-none transition-colors bg-cream" placeholder="Your name" />
+            <label class="block text-sm font-medium text-warm-brown mb-1" for="name" style="font-family: Georgia, 'Times New Roman', serif;">Name</label>
+            <input type="text" id="name" class="w-full border border-gold/30 rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-gold/40 focus:border-gold outline-none transition-colors bg-warm-surface" placeholder="Your name" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-warm-brown mb-1" for="phone">Phone</label>
-            <input type="tel" id="phone" class="w-full border border-gold/30 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-saffron/20 focus:border-saffron outline-none transition-colors bg-cream" placeholder="+91 ..." />
+            <label class="block text-sm font-medium text-warm-brown mb-1" for="phone" style="font-family: Georgia, 'Times New Roman', serif;">Phone</label>
+            <input type="tel" id="phone" class="w-full border border-gold/30 rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-gold/40 focus:border-gold outline-none transition-colors bg-warm-surface" placeholder="+91 ..." />
           </div>
           <div>
-            <label class="block text-sm font-medium text-warm-brown mb-1" for="email">Email (optional)</label>
-            <input type="email" id="email" class="w-full border border-gold/30 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-saffron/20 focus:border-saffron outline-none transition-colors bg-cream" placeholder="your@email.com" />
+            <label class="block text-sm font-medium text-warm-brown mb-1" for="email" style="font-family: Georgia, 'Times New Roman', serif;">Email (optional)</label>
+            <input type="email" id="email" class="w-full border border-gold/30 rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-gold/40 focus:border-gold outline-none transition-colors bg-warm-surface" placeholder="your@email.com" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-warm-brown mb-1" for="subject">Subject</label>
-            <select id="subject" class="w-full border border-gold/30 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-saffron/20 focus:border-saffron outline-none transition-colors bg-cream">
+            <label class="block text-sm font-medium text-warm-brown mb-1" for="subject" style="font-family: Georgia, 'Times New Roman', serif;">Subject</label>
+            <select id="subject" class="w-full border border-gold/30 rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-gold/40 focus:border-gold outline-none transition-colors bg-warm-surface">
               <option>General Enquiry</option>
               <option>Seva Booking</option>
               <option>Course Registration</option>
@@ -89,10 +106,10 @@ import Layout from '../layouts/Layout.astro';
             </select>
           </div>
           <div>
-            <label class="block text-sm font-medium text-warm-brown mb-1" for="message">Message</label>
-            <textarea id="message" rows="4" class="w-full border border-gold/30 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-saffron/20 focus:border-saffron outline-none transition-colors bg-cream" placeholder="How can we help you?"></textarea>
+            <label class="block text-sm font-medium text-warm-brown mb-1" for="message" style="font-family: Georgia, 'Times New Roman', serif;">Message</label>
+            <textarea id="message" rows="4" class="w-full border border-gold/30 rounded px-3 py-2.5 text-sm focus:ring-2 focus:ring-gold/40 focus:border-gold outline-none transition-colors bg-warm-surface" placeholder="How can we help you?"></textarea>
           </div>
-          <button type="submit" class="w-full bg-saffron hover:bg-saffron-dark text-white py-2.5 rounded-lg text-sm font-medium transition-colors">
+          <button type="submit" class="w-full bg-saffron-dark hover:bg-saffron text-white py-2.5 rounded text-sm font-medium transition-colors" style="font-family: Georgia, 'Times New Roman', serif;">
             Send Message
           </button>
         </form>

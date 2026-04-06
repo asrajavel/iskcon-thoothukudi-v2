@@ -20,90 +20,162 @@ const exploreLinks = [
   { title: 'Events & Festivals', href: `${base}/events` },
   { title: 'Contact Us', href: `${base}/contact` },
 ];
+
+const darshanTimings = [
+  { name: 'Mangala Arati', time: '4:30 AM' },
+  { name: 'Tulasi Puja', time: '5:00 AM' },
+  { name: 'Sringar Darshan', time: '7:15 AM' },
+  { name: 'Guru Puja', time: '7:30 AM' },
+  { name: 'Bhagavatam Class', time: '8:00 AM' },
+  { name: 'Raj Bhog Arati', time: '12:30 PM' },
+  { name: 'Evening Darshan', time: '4:00 PM' },
+  { name: 'Sandhya Arati', time: '7:00 PM' },
+  { name: 'Temple Closes', time: '8:30 PM' },
+];
 ---
 
 <Layout title="Home">
-  <!-- Hero -->
-  <section class="relative text-white overflow-hidden">
-    <div class="absolute inset-0">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/9/9e/ISKCON_Juhu_Temple_and_Guesthouse.JPG"
-        alt="ISKCON Temple"
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-maroon/70"></div>
-    </div>
-    <div class="relative max-w-4xl mx-auto text-center py-28 px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gold">
+  <!-- Decorative Welcome Section -->
+  <section class="py-20 px-4 text-center" style="background: linear-gradient(180deg, #FFF8E7 0%, #FFFFF0 100%);">
+    <div class="max-w-3xl mx-auto">
+      <!-- Ornamental top border -->
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <div class="h-px w-20 bg-gold"></div>
+        <div class="text-gold text-2xl">&#9753;</div>
+        <div class="h-px w-20 bg-gold"></div>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl text-maroon mb-4" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold; letter-spacing: 0.02em;">
         ISKCON Thoothukudi
       </h1>
-      <p class="text-lg text-cream/80 max-w-2xl mx-auto mb-8">
-        ISKCON Thoothukudi — A spiritual oasis in the pearl city, dedicated to the path of Bhakti Yoga
+      <p class="text-warm-muted text-sm tracking-widest uppercase mb-6">International Society for Krishna Consciousness</p>
+
+      <p class="text-gold text-lg md:text-xl italic mb-2" style="font-family: Georgia, 'Times New Roman', serif;">
+        Hare Krishna Hare Krishna Krishna Krishna Hare Hare
+      </p>
+      <p class="text-gold text-lg md:text-xl italic mb-8" style="font-family: Georgia, 'Times New Roman', serif;">
+        Hare Rama Hare Rama Rama Rama Hare Hare
+      </p>
+
+      <p class="text-warm-muted max-w-xl mx-auto mb-10">
+        A spiritual oasis in the pearl city, dedicated to the path of Bhakti Yoga
         as taught by His Divine Grace A.C. Bhaktivedanta Swami Prabhupada.
       </p>
+
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href={`${base}/sevas`} class="bg-saffron hover:bg-saffron-dark px-6 py-3 rounded-lg font-medium transition-colors">
+        <a href={`${base}/sevas`} class="bg-saffron-dark hover:bg-saffron px-8 py-3 text-white font-medium transition-colors rounded" style="font-family: Georgia, 'Times New Roman', serif;">
           Book a Seva
         </a>
-        <a href={`${base}/courses`} class="border border-gold/50 hover:bg-gold/10 text-gold px-6 py-3 rounded-lg font-medium transition-colors">
+        <a href={`${base}/courses`} class="border-2 border-maroon hover:bg-maroon hover:text-ivory text-maroon px-8 py-3 font-medium transition-colors rounded" style="font-family: Georgia, 'Times New Roman', serif;">
           Explore Courses
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Darshan Timings -->
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <div class="border border-gold/30 rounded-lg p-6 flex flex-wrap items-center justify-between gap-4 bg-warm-surface shadow-md shadow-warm-brown/5">
-      <div>
-        <h2 class="font-bold text-warm-brown text-lg">Temple Darshan Timings</h2>
-        <p class="text-warm-muted text-sm mt-1">Open for all devotees, every day</p>
-      </div>
-      <div class="flex gap-8 text-sm">
-        <div class="text-center">
-          <div class="text-saffron font-bold">Morning</div>
-          <div class="text-warm-muted">4:30 AM - 1:00 PM</div>
-        </div>
-        <div class="text-center">
-          <div class="text-saffron font-bold">Evening</div>
-          <div class="text-warm-muted">4:00 PM - 8:30 PM</div>
-        </div>
+      <!-- Ornamental bottom border -->
+      <div class="flex items-center justify-center gap-4 mt-10">
+        <div class="h-px w-20 bg-gold"></div>
+        <div class="text-gold text-2xl">&#9753;</div>
+        <div class="h-px w-20 bg-gold"></div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Sevas -->
-  <section class="max-w-4xl mx-auto px-4 pb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-maroon mb-6">Featured Sevas</h2>
-    <div class="grid md:grid-cols-2 gap-6">
+  <!-- Darshan Timings TABLE -->
+  <section class="max-w-4xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl text-maroon mb-6 text-center" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Temple Darshan Timings</h2>
+    <p class="text-warm-muted text-center mb-8 text-sm">Open for all devotees, every day</p>
+    <div class="max-w-lg mx-auto overflow-hidden rounded border border-gold/40 shadow-md">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-maroon text-gold">
+            <th class="text-left px-5 py-3 font-medium" style="font-family: Georgia, 'Times New Roman', serif;">Program</th>
+            <th class="text-right px-5 py-3 font-medium" style="font-family: Georgia, 'Times New Roman', serif;">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {darshanTimings.map((item, i) => (
+            <tr class={i % 2 === 0 ? 'bg-ivory' : 'bg-warm-surface'}>
+              <td class="px-5 py-2.5 text-warm-brown">{item.name}</td>
+              <td class="px-5 py-2.5 text-right text-saffron-dark font-medium">{item.time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Featured Sevas - HORIZONTAL cards -->
+  <section class="max-w-4xl mx-auto px-4 pb-14">
+    <h2 class="text-2xl md:text-3xl text-maroon mb-8" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Featured Sevas</h2>
+    <div class="space-y-6">
       {featuredSevas.map(seva => (
-        <Card title={seva.title} description={seva.description} imageUrl={seva.imageUrl} href={`${base}/sevas`} />
+        <div class="flex flex-col md:flex-row overflow-hidden bg-ivory border-l-4 border-l-gold shadow-md shadow-warm-brown/10 rounded-r-lg hover:shadow-lg transition-shadow">
+          <div class="md:w-64 h-48 md:h-auto overflow-hidden shrink-0">
+            <img src={seva.imageUrl} alt={seva.title} class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-center">
+            <h3 class="text-xl text-warm-brown mb-2" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">{seva.title}</h3>
+            <p class="text-warm-muted text-sm leading-relaxed mb-4">{seva.description}</p>
+            <a href={`${base}/sevas`} class="inline-flex items-center gap-1 text-sm text-saffron-dark font-medium hover:underline">
+              Learn more
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
       ))}
     </div>
   </section>
 
-  <!-- Upcoming Events -->
-  <section class="max-w-4xl mx-auto px-4 pb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-maroon mb-6">Upcoming Events</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      {upcomingEvents.map(event => (
-        <Card title={event.title} description={event.description} badge={event.badge} />
-      ))}
+  <!-- Events SIDEBAR layout -->
+  <section class="max-w-4xl mx-auto px-4 pb-14">
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="flex-1">
+        <h2 class="text-2xl md:text-3xl text-maroon mb-6" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Upcoming Events</h2>
+        <p class="text-warm-muted mb-6">Join us in celebrating the timeless Vedic festivals and special programs throughout the year. All events are free and open to everyone.</p>
+        <div class="flex flex-wrap gap-4">
+          {exploreLinks.map(link => (
+            <a href={link.href} class="flex items-center justify-between border-l-4 border-l-gold bg-ivory px-5 py-4 hover:shadow-md transition-shadow group shadow-sm rounded-r-lg">
+              <span class="font-medium text-warm-brown group-hover:text-saffron-dark transition-colors" style="font-family: Georgia, 'Times New Roman', serif;">{link.title}</span>
+              <svg class="w-5 h-5 text-warm-muted group-hover:text-saffron-dark transition-colors ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+      <aside class="md:w-72 shrink-0">
+        <div class="bg-maroon rounded p-5 shadow-lg">
+          <h3 class="text-gold text-lg mb-4" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Events Calendar</h3>
+          <div class="space-y-4">
+            {upcomingEvents.map(event => (
+              <div class="border-b border-gold/20 pb-3 last:border-0 last:pb-0">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full font-medium">{event.badge}</span>
+                </div>
+                <h4 class="text-cream text-sm font-medium">{event.title}</h4>
+                <p class="text-cream/60 text-xs mt-1 leading-relaxed">{event.description}</p>
+              </div>
+            ))}
+          </div>
+          <a href={`${base}/events`} class="block mt-4 text-center text-xs text-gold hover:underline">View all events &rarr;</a>
+        </div>
+      </aside>
     </div>
   </section>
 
   <hr class="max-w-4xl mx-auto border-gold/20" />
 
-  <!-- Explore More -->
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-maroon mb-6">Explore more</h2>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {exploreLinks.map(link => (
-        <a href={link.href} class="flex items-center justify-between border border-gold/30 rounded-lg px-5 py-4 hover:border-saffron/50 transition-colors group bg-warm-surface shadow-sm">
-          <span class="font-medium text-warm-brown group-hover:text-saffron transition-colors">{link.title}</span>
-          <svg class="w-5 h-5 text-warm-muted group-hover:text-saffron transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      ))}
+  <!-- About the Temple -->
+  <section class="max-w-4xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl text-maroon mb-6" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">About the Temple</h2>
+    <div class="border-l-4 border-l-gold pl-6">
+      <p class="text-warm-brown leading-relaxed mb-4">
+        ISKCON Thoothukudi is a spiritual center in the pearl city of Tamil Nadu, dedicated to the practice and propagation of Bhakti Yoga as taught by His Divine Grace A.C. Bhaktivedanta Swami Prabhupada, the Founder-Acharya of the International Society for Krishna Consciousness.
+      </p>
+      <p class="text-warm-brown leading-relaxed mb-4">
+        The temple serves as a beacon of spiritual light, offering daily darshan of Sri Sri Radha Krishna, regular classes on Bhagavad Gita and Srimad Bhagavatam, vibrant kirtan sessions, and sumptuous prasadam distribution. All programs are free and open to everyone, regardless of background or belief.
+      </p>
+      <p class="text-warm-muted text-sm italic" style="font-family: Georgia, 'Times New Roman', serif;">
+        "The Supreme Lord said: I am seated in everyone's heart, O Arjuna, and from Me come remembrance, knowledge and forgetfulness." — Bhagavad Gita 15.15
+      </p>
     </div>
   </section>
 

@@ -48,17 +48,11 @@ const events = [
 ---
 
 <Layout title="Events" description="Upcoming festivals and events at ISKCON Thoothukudi">
-  <section class="relative text-white overflow-hidden">
-    <div class="absolute inset-0">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Rath_yatra_festival_by_ISKCON_Durgapur_in_Paschim_Bardhaman_district_of_West_Bengal%2C_India%2C_photographed_by_Yogabrata_Chakraborty_2.jpg"
-        alt="ISKCON Ratha Yatra Festival"
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-maroon/70"></div>
-    </div>
-    <div class="relative max-w-4xl mx-auto text-center py-16 px-4">
-      <h1 class="text-3xl md:text-4xl font-bold mb-3 text-gold">Events & Festivals</h1>
+  <!-- Page Banner -->
+  <section class="bg-maroon py-12 px-4 relative">
+    <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 18px, #B8860B 18px, #B8860B 20px); border-top: 3px solid #B8860B; border-bottom: 3px solid #B8860B;"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl text-gold mb-3" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">Events & Festivals</h1>
       <p class="text-cream/80 max-w-xl mx-auto">
         Join us in celebrating the timeless Vedic festivals and special programs
         throughout the year. All events are free and open to everyone.
@@ -66,32 +60,37 @@ const events = [
     </div>
   </section>
 
+  <!-- Timeline -->
   <section class="max-w-4xl mx-auto px-4 py-12">
-    <div class="space-y-4">
-      {events.map(event => (
-        <div class:list={[
-          'border rounded-lg overflow-hidden hover:border-gold/60 transition-colors bg-cream shadow-md shadow-warm-brown/5',
-          event.highlight ? 'border-saffron/40' : 'border-gold/30',
-        ]}>
-          <div class="p-6">
-            <div class="flex flex-wrap items-start gap-4">
-              <div class="shrink-0 text-center border border-gold/30 rounded-lg px-4 py-3 min-w-[100px] bg-warm-surface">
-                <div class="text-saffron font-bold text-sm">{event.date}</div>
-                <div class="text-warm-muted text-xs mt-0.5">{event.time}</div>
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-2">
-                  <h3 class="font-bold text-lg text-warm-brown">{event.title}</h3>
-                  {event.highlight && (
-                    <span class="text-xs bg-saffron/10 text-saffron px-2 py-0.5 rounded-full font-medium">Featured</span>
-                  )}
-                </div>
-                <p class="text-warm-muted text-sm mt-2 leading-relaxed">{event.description}</p>
+    <div class="relative">
+      <!-- Vertical timeline line -->
+      <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gold/40 transform md:-translate-x-px"></div>
+
+      <div class="space-y-10">
+        {events.map((event, i) => (
+          <div class={`relative flex flex-col md:flex-row ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-8`}>
+            <!-- Timeline dot -->
+            <div class="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-gold border-2 border-ivory transform -translate-x-1/2 mt-6 z-10"></div>
+
+            <!-- Spacer for alternating -->
+            <div class="hidden md:block md:w-1/2"></div>
+
+            <!-- Event card -->
+            <div class={`ml-14 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-10' : 'md:pl-10'}`}>
+              <div class={`bg-ivory border-l-4 ${event.highlight ? 'border-l-saffron-dark' : 'border-l-gold'} shadow-md rounded-r-lg p-5 hover:shadow-lg transition-shadow relative`}>
+                {event.highlight && (
+                  <div class="absolute -top-2 -right-2 w-8 h-8 bg-saffron-dark rounded-full flex items-center justify-center shadow-md">
+                    <span class="text-white text-sm">&#9733;</span>
+                  </div>
+                )}
+                <div class="text-xs text-saffron-dark font-medium mb-1">{event.date} &bull; {event.time}</div>
+                <h3 class="text-lg text-warm-brown mb-2" style="font-family: Georgia, 'Times New Roman', serif; font-weight: bold;">{event.title}</h3>
+                <p class="text-warm-muted text-sm leading-relaxed">{event.description}</p>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 </Layout>

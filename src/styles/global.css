@@ -3,14 +3,20 @@
 @theme {
   --color-saffron: #FF6F00;
   --color-saffron-dark: #E65100;
-  --color-maroon: #5D0E1A;
-  --color-maroon-light: #7A1F2E;
-  --color-gold: #C5963A;
-  --color-gold-light: #D4A94E;
-  --color-cream: #FFF8E7;
+  --color-maroon: #4A0E2B;
+  --color-maroon-light: #6B1D3F;
+  --color-gold: #B8860B;
+  --color-gold-light: #DAA520;
+  --color-cream: #FFFFF0;
   --color-warm-brown: #3E2723;
   --color-warm-muted: #5D4037;
   --color-warm-border: #D7CCC8;
-  --color-warm-surface: #FFF3E0;
-  --font-family-sans: Georgia, "Times New Roman", serif;
+  --color-warm-surface: #FFF8E7;
+  --color-ivory: #FFFFF0;
+  --font-family-heading: Georgia, "Times New Roman", serif;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", serif;
 }
