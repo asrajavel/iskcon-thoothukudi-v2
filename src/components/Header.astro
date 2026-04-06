@@ -1,0 +1,73 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const donateUrl = 'https://pages.razorpay.com/ISKCON-KVA-DONATION';
+
+const navItems = [
+  { label: 'Home', href: `${base}/` },
+  { label: 'About', href: `${base}/about` },
+  { label: 'Sevas', href: `${base}/sevas` },
+  { label: 'Courses', href: `${base}/courses` },
+  { label: 'Events', href: `${base}/events` },
+  { label: 'Contact', href: `${base}/contact` },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-maroon border-b-2 border-gold/40 sticky top-0 z-50 shadow-lg">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href={`${base}/`} class="flex items-center gap-3">
+      <img src="https://iskconmumbaipull-21250.kxcdn.com/bi_theme_snippets/static/src/img/logo-black-header.png" alt="ISKCON" class="h-12 w-auto brightness-200" />
+      <div>
+        <div class="text-lg font-bold text-gold leading-tight">ISKCON Thoothukudi</div>
+        <div class="text-xs text-cream/70">International Society for Krishna Consciousness</div>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-1">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class:list={[
+            'px-4 py-2 text-sm font-medium transition-colors',
+            currentPath === item.href
+              ? 'text-gold border-b-2 border-gold'
+              : 'text-cream/80 hover:text-gold',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href={donateUrl} target="_blank" rel="noopener noreferrer" class="ml-2 px-4 py-2 bg-saffron text-white text-sm font-medium rounded-lg hover:bg-saffron-dark transition-colors">
+        Donate
+      </a>
+    </nav>
+    <button id="mobile-menu-btn" class="md:hidden p-2 text-cream" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="md:hidden hidden border-t border-gold/20 px-4 pb-3 bg-maroon">
+    {navItems.map(item => (
+      <a
+        href={item.href}
+        class:list={[
+          'block py-2.5 text-sm border-b border-gold/10 last:border-0',
+          currentPath === item.href ? 'text-gold font-medium' : 'text-cream/80 hover:text-gold',
+        ]}
+      >
+        {item.label}
+      </a>
+    ))}
+    <a href={donateUrl} target="_blank" rel="noopener noreferrer" class="block mt-2 text-center px-4 py-2.5 bg-saffron text-white text-sm font-medium rounded-lg hover:bg-saffron-dark transition-colors">
+      Donate
+    </a>
+  </nav>
+</header>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

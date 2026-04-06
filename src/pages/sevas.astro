@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const sevas = [
+  { title: 'Abhishekam', description: 'Sacred bathing ceremony for the deities with milk, honey, ghee, curd, and holy water. Recommended for special occasions and festivals.', imageUrl: 'https://donations.iskconwhitefield.org/cdn/shop/files/Untitleddesign_13.png?v=1742070333', price: '₹1,116' },
+  { title: 'Archana', description: 'Recitation of 108 names of the Lord. Available for Radha Krishna, Gaura Nitai, and Jagannath, Baladeva, Subhadra.', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Radha_Krishna_ISKCON_Tirupati.JPG', price: '₹251' },
+
+  { title: 'Annadan', description: 'Sponsor prasadam distribution to devotees and guests. Feed 50 people with a single donation.', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Daily_Free_Prasadam_Distribution_at_ISKCON_Juhu.jpg', price: '₹2,500' },
+  { title: 'Temple Construction', description: 'Contribute to the construction and development of the ISKCON Thoothukudi temple. Help build a magnificent house for the Lord.', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Radha_Krishna-chandra_Temple.jpg', price: '₹10,000' },
+
+  { title: 'Deity Dress Sponsorship', description: 'Sponsor new clothes for the deities on special occasions. Includes your family name in the announcement.', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Sri_Caitanya_Mahaprabhu_and_Nityananda_Mahaprabhu%21.jpg', price: '₹5,001' },
+];
+---
+
+<Layout title="Sevas" description="Participate in temple sevas and worship services at ISKCON Thoothukudi">
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold text-maroon mb-2">Temple Sevas</h1>
+    <p class="text-warm-muted max-w-xl mb-10">
+      Participate in devotional services and receive the blessings of Sri Sri Radha Krishna.
+      All sevas include prasadam for your family.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sevas.map(seva => (
+        <div class="border border-gold/30 rounded-lg overflow-hidden hover:border-gold/60 transition-colors bg-cream shadow-md shadow-warm-brown/5">
+          <div class="h-40 overflow-hidden">
+            <img src={seva.imageUrl} alt={seva.title} class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-bold text-warm-brown">{seva.title}</h3>
+              <span class="text-sm text-saffron font-bold shrink-0">{seva.price}</span>
+            </div>
+            <p class="text-warm-muted text-sm mt-2 leading-relaxed">{seva.description}</p>
+            <a href="https://pages.razorpay.com/ISKCON-KVA-DONATION" target="_blank" rel="noopener noreferrer" class="mt-4 w-full block text-center border border-saffron text-saffron hover:bg-saffron hover:text-white py-2 rounded-lg text-sm font-medium transition-colors">
+              Book This Seva
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <hr class="my-10 border-gold/20" />
+
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-maroon mb-2">Want to book a seva?</h2>
+      <p class="text-warm-muted text-sm mb-4">
+        Contact us directly to book any seva. We accept UPI, bank transfer, and cash.
+      </p>
+      <a href={`${base}/contact`} class="inline-block bg-saffron hover:bg-saffron-dark text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-colors">
+        Contact Temple Office
+      </a>
+    </div>
+  </section>
+</Layout>
